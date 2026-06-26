@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     echo 'Installing Playwright browsers...'
-                    sh 'npx playwright install'
+                    bat 'npx playwright install'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                 script {
                     echo 'Running Playwright tests...'
                     catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                        sh 'npm test'
+                        bat 'npm test'
                     }
                 }
             }
