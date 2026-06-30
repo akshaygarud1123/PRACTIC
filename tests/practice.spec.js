@@ -12,7 +12,9 @@ test('view the brand is display or not', async ({page})=>{
     await  expect (brand).toBeVisible();
 
     //click on any brand name
-   await page.locator("//a[@href='/brand_products/Madame']").click()
+   await page.locator("//a[@href='/brand_products/Madame']").click({
+    force: true
+})
    const brandTitle = page.locator("//h2[normalize-space()='Brand - Madame Products']")
    await expect(brandTitle).toBeVisible();
 
